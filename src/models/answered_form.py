@@ -1,10 +1,7 @@
-from flask_login import UserMixin
-from werkzeug.security import generate_password_hash, check_password_hash
-
 from src.server import db
 
-class Answered(UserMixin, db.Model):
-    __tablename__ = 'Answered'
+class Answered(db.Model):
+    __tablename__ = 'answered'
 
     id = db.Column(db.Integer,
                    primary_key=True)
@@ -14,5 +11,9 @@ class Answered(UserMixin, db.Model):
 
     schema_id = db.Column(db.Integer,
                     db.ForeignKey('schema.id'))
+    
+    posted = db.Column(db.DATE)
+
+    form = db.Column(db.JSON)
 
     
