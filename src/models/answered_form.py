@@ -12,7 +12,7 @@ class Answered(db.Model):
     schema_id = db.Column(db.Integer,
                     db.ForeignKey('schema.id'))
     
-    posted = db.Column(db.DATE)
+    posted = db.Column(db.DateTime)
 
     form = db.Column(db.JSON)
 

@@ -7,8 +7,9 @@ class Schema(db.Model):
                    primary_key=True)
 
     user_id = db.Column(db.Integer,
-                    db.ForeignKey('user.id'))
+                    db.ForeignKey('user.id'),
+                    nullable=True)
 
-    created = db.Column(db.DATE)
+    created = db.Column(db.DateTime)
     
     schema = db.Column(db.JSON)
